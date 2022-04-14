@@ -14,8 +14,10 @@ const Header = () => {
       
       <Nav className="ms-auto 'text-light'">
         <CustomLink to="/"  >Home</CustomLink>
-        <CustomLink to="/restaurent" className='ms-3'>Restaurent</CustomLink>
+        <CustomLink to="/Checkout" className='ms-3'>Checkout</CustomLink>
+        <CustomLink to="/blogs" className='ms-3'>Blogs</CustomLink>
         <CustomLink to="/about" className='ms-3'>About us</CustomLink>
+        <CustomLink to="/login" className='ms-3'>Login</CustomLink>
         
       </Nav>
     </Navbar.Collapse>

@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
 
@@ -8,8 +10,14 @@ const SignUp = () => {
     const nameRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
-
-
+const navigate = useNavigate();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      
 
 const handleFormSubmit = event =>{
     event.preventDefault();
@@ -18,7 +26,8 @@ const handleFormSubmit = event =>{
     const name = nameRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
-
+    createUserWithEmailAndPassword(email,password)
+    navigate('/login')
 }
     return (
         <div className='w-50 mx-auto mt-5'>

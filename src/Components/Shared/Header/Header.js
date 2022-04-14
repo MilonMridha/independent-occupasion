@@ -1,8 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import CustomLink from './CustomActive/CustomActive';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    signOut(auth);
+    navigate('/login');
+  };
+  
     return (
         <div>
             <Navbar className='rounded'  bg="primary" expand="lg">
@@ -12,12 +24,18 @@ const Header = () => {
     <Navbar.Collapse id="basic-navbar-nav" className=''>
       
       
-      <Nav className="ms-auto 'text-light'">
+      <Nav className="ms-auto 'text-light '">
         <CustomLink to="/"  >Home</CustomLink>
         <CustomLink to="/Checkout" className='ms-3'>Checkout</CustomLink>
         <CustomLink to="/blogs" className='ms-3'>Blogs</CustomLink>
         <CustomLink to="/about" className='ms-3'>About us</CustomLink>
-        <CustomLink to="/login" className='ms-3'>Login</CustomLink>
+
+        { user? 
+        <Button onClick={logout} className='btn btn-danger rounded-pill p-1 ms-2 text-decoration-none'>SignOut</Button>
+        :
+          <CustomLink to="/login" className='ms-3'>Login</CustomLink>
+          
+          }
         
       </Nav>
     </Navbar.Collapse>

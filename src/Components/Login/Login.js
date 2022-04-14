@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -14,6 +15,8 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    
+
 
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
@@ -53,6 +56,7 @@ const Login = () => {
                 </Button>
             </Form>
             <p className='text-center mt-2'>New to Travel-Guide? <Link to='/signup' className='text-decoration-none'>Please SignUp.</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

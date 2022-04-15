@@ -13,12 +13,12 @@ const Guides = ({ guide }) => {
             <Card className='shadow rounded' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>Name : {name}</Card.Title>
+                    <Card.Title> {name}</Card.Title>
                     <Card.Text>
                         {detail}
                     </Card.Text>
-                    <h6>Hire : ${hire}</h6>
-                    <Button onClick={goCheckOut} variant="primary">Go Checkout</Button>
+                    <h6>Price : ${hire}</h6>
+                    <Button onClick={goCheckOut} variant="dark rounded-pill w-100">Go Checkout</Button>
                 </Card.Body>
             </Card>
         </div>

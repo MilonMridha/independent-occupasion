@@ -44,9 +44,9 @@ const SignUp = () => {
         navigate('/')
     }
     return (
-        <div className='w-50 mx-auto mt-5'>
+        <div className='w-50 mx-auto mt-5 mb-5 '>
             <h3 className='text-center text-danger mb-3'>Please SignUp!!</h3>
-            <Form className='shadow p-4' onSubmit={handleFormSubmit}>
+            <Form className='shadow rounded p-4' onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
                     <Form.Control ref={nameRef} className='rounded-pill' type="text" placeholder="Name" required />

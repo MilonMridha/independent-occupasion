@@ -24,9 +24,25 @@ const Blogs = () => {
                     <h6>4. Authentication is visible to and partially changeable by the user.</h6>
                 </div>
             </div>
-            <h5 className='mt-5'>Qes-2: Why are you using firebase? What other options do you have to implement authentication?
+            <h5 className='mt-5'>Qes-2: Why are you using firebase? What other options do you have to implement authentication?</h5>
+            <h5 className='text-danger'>Ans :</h5>
 
-</h5>
+            <div className='blogs shadow p-3'>
+                <p>Google’s Firebase is a mobile platform that lets you develop mobile apps. It is especially geared towards business apps, with the intention of helping businesses grow their user bases and increase their profits through their mobile apps.Let’s look closer at four features that make this platform essential: 1.Incredibly Built-In Analytics.2. App Development Made Easy.3. Growth and User Engagement.4. Increase Your Earnings...
+                </p>
+
+            </div>
+            <h5 className='mt-5'> Qes-3 :What other services does firebase provide other than authentication
+            </h5> <h5 className='text-danger'>Ans :</h5>
+            <div className='mt-3 shadow rounded p-4'>
+                <p>Similarly, Firebase is used for many purposes that can help your apps to develop, grow and make it a quality app.Firebase, Backend-as-a-Service (BaaS), is a platform by Google that provides functionalities and helps with the backend development of your Android, iOS, or web and even some products that support Unity3D too.Firebase Database: used to store users data like chat messages, users details and other metadata
+                    Firebase Cloud Storage: used to store user-generated content like the profile picture, multimedia messages, etc.
+                    Firebase Cloud Messaging: used to send notification
+                    Firebase Remote Config: used to perform A/B testing on the go
+                    Firebase has great features, but we’ve pointed out 19 amazing things Firebase.Moreover, Firebase is made with a developer in mind to solve all the issues they might face when making an app.
+
+                </p>
+            </div>
         </div>
     );
 };

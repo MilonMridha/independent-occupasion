@@ -19,7 +19,7 @@ const Home = () => {
                 <img className='w-100' src={image} alt="" />
             </div>
             <h3 className='mt-5 text-primary'>Services Section</h3>
-            <div className='container mx-auto row row-cols-1 row-cols-md-3 g-4 mt-2 ms-2'>
+            <div className='container mx-auto row row-cols-1 row-cols-md-3 g-4 mt-2 '>
                 {
                     guides.map(guide => <Guides
                     key={guide.id}

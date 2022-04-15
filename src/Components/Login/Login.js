@@ -1,26 +1,26 @@
 import React, { useRef } from 'react';
 import { Button, Form, Toast } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Header/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
-    
+
 
 
     const location = useLocation();
@@ -36,22 +36,22 @@ const Login = () => {
         const password = passwordRef.current.value;
         console.log(password);
         signInWithEmailAndPassword(email, password);
-        
-    }
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-      
-    const resetPassword = async()=>{
-        const email = emailRef.current.value;
-       if(email){
-        await sendPasswordResetEmail(email);
-        toast('Sent email');
-       }
-       else{
-        toast('Enter your email address');
-       }
 
     }
-    if(loading || sending){
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('Enter your true email address');
+        }
+
+    }
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
@@ -77,12 +77,11 @@ const Login = () => {
                 </Button>
             </Form>
             <p className='text-center mt-2'>New to Travel-Guide? <Link to='/signup' className='text-decoration-none'>Please SignUp.</Link></p>
-
-            <p className='text-center'>Forget Password ?<button className='text-primary text-decoration-none btn btn-link' onClick={resetPassword}>Reset password</button></p>
+            <p className='text-center'>Forget Password ? <button className='text-primary text-decoration-none p-0 btn btn-link' onClick={resetPassword}> Reset password</button></p>
 
             <SocialLogin></SocialLogin>
             <ToastContainer></ToastContainer>
-            
+
         </div>
     );
 };

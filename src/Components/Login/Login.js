@@ -1,19 +1,24 @@
 import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { Button, Form, Toast } from 'react-bootstrap';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Header/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        hookError,
     ] = useSignInWithEmailAndPassword(auth);
     
 
@@ -33,6 +38,22 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
         
     }
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+      
+    const resetPassword = async()=>{
+        const email = emailRef.current.value;
+       if(email){
+        await sendPasswordResetEmail(email);
+        toast('Sent email');
+       }
+       else{
+        toast('Enter your email address');
+       }
+
+    }
+    if(loading || sending){
+        return <Loading></Loading>
+    }
 
     return (
         <div className='w-50 mx-auto mt-5'>
@@ -40,23 +61,28 @@ const Login = () => {
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                    <Form.Control ref={emailRef} className='rounded-pill shadow' type="email" placeholder="Enter email" />
+                    <Form.Control ref={emailRef} className='rounded-pill shadow pb-2' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                    <Form.Control ref={passwordRef} className='rounded-pill shadow' type="password" placeholder="password" />
+                    <Form.Control ref={passwordRef} className='rounded-pill shadow pb-2' type="password" placeholder="password" required />
                 </Form.Group>
 
 
 
-                <p>{error?.message} </p>
+                <p>{hookError?.message} </p>
                 <Button className='w-50 d-block rounded-pill mx-auto' variant="danger" type="submit">
                     Login
                 </Button>
             </Form>
             <p className='text-center mt-2'>New to Travel-Guide? <Link to='/signup' className='text-decoration-none'>Please SignUp.</Link></p>
+
+            <p className='text-center'>Forget Password ?<button className='text-primary text-decoration-none btn btn-link' onClick={resetPassword}>Reset password</button></p>
+
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
+            
         </div>
     );
 };

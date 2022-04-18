@@ -1,19 +1,20 @@
 
 .banner{
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .banner img{
     width: 100%;
     
+    
 }
 .heading{
  color: yellow;
- position: absolute;
- top: 25%;
+ position:absolute;
+ top: 30%;
  width: 100%;
- text-align: left;
+ text-align: center;
  font-size: 3rem;
  text-shadow: 10px 10px 10px #000000;
 }

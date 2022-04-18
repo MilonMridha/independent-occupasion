@@ -8,9 +8,10 @@ const Footer = () => {
     return (
         <div className='bg-dark mt-2 rounded'>
             <div className='p-3 pt-4'>
-                <h6 className='text-light'>Our Community</h6>
+                <h6 className='text-light'>My Community</h6>
                 <h6 className='text-light'>Help Center</h6>
                 <h6 className='text-light'>Athor</h6>
+                <h6 className='text-light'>Stay Connected</h6>
                 <div>
                     <span><img src={google} alt="" /></span>
                     <span className='ms-3'><img src={facebook} alt="" /></span>

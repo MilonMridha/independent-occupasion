@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import CustomLink from './CustomActive/CustomActive';
 import logo from '../../../Social-icon/travelguide.png'
 
+
 const Header = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -18,9 +19,9 @@ const Header = () => {
   
     return (
         <div>
-            <Navbar className='rounded p-0'  bg="light" expand="lg">
+            <Navbar className='rounded p-0' sticky='top'   bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="#home" className='text-danger' > <h2>Perfect Travel Guide <span><img src={logo} alt="" /></span></h2> </Navbar.Brand>
+    <Navbar.Brand href="#home" className='text-danger' > <h2>A Travel Guide <span><img src={logo} alt="" /></span></h2> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
     <Navbar.Collapse id="basic-navbar-nav" className=''>
       

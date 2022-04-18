@@ -6,7 +6,7 @@ const CheckOut = () => {
     return (
         <div >
             <div className='w-50 mx-auto mt-5 mb-5'>
-                <h3 className='text-danger mb-4'>Welcome To Checout Page</h3>
+                <h3 className='text-danger mb-4'>Welcome To Checkout Page</h3>
                 <Form className='shadow rounded p-3'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="text" placeholder="Name" required />

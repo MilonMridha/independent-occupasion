@@ -4,20 +4,20 @@
         "name" : "Day pakage",
         "image" : "https://i.ibb.co/FbJ6drJ/guide-1.jpg",
         "hire" : 150,
-        "detail" : "They make people laugh : Everyone remembers the people who make them laugh.Whether it's driving from a cruise ship to a hotel or hiking in Denali National Park, guests will have a much more memorable time if they are crying with laughter along the way."
+        "detail" : " Everyone remembers the people who make them laugh.Whether it's driving from a cruise ship to a hotel or hiking in Denali National Park, guests will have a much more memorable time if they are crying with laughter along the way."
     },
     {
         "id": 2,
         "name" : "Weekly pakage",
         "image" : "https://i.ibb.co/zJp8j89/guide-3.jpg",
         "hire" : 350,
-        "detail" : "They listen : Making guests feel comfortable and happy is one of a guides main roles—and sometimes that means bending an ear. Sure, listening to guests needs will help a guide perform better. But sometimes listening is also a form of flattery, which can go a long way toward better tips."
+        "detail" : "Making guests feel comfortable and happy is one of a guides main roles—and sometimes that means bending an ear. Sure, listening to guests needs will help a guide perform better."
     },
     {
         "id": 3,
         "name" : "Monthly pakage",
         "image" : "https://i.ibb.co/b6F6PYc/guide-5.jpg",
         "hire" : 500,
-        "detail" : "They go the extra mile :Some days are going to be easier and more fun than others, but having some signature style makes the days go by more easily and makes those guides more memorable for their guests."
+        "detail" : "Some days are going to be easier and more fun than others, but having some signature style makes the days go by more easily and makes those guides more memorable for my guests."
     }
 ]

@@ -5,7 +5,7 @@ import './Blogs.css'
 const Blogs = () => {
     return (
         <div className=' container mx-auto mt-4 '>
-            <h1 className='text-warning'>My Blogs</h1>
+            <h1 className='text-danger'>My Blogs</h1>
             <h5 className='mt-4'>Qes no-1: Difference between authorization and authentication?</h5>
             <h5 className='text-danger text-left'>Ans :</h5>
             <div className='row'>
@@ -45,7 +45,7 @@ const Blogs = () => {
             </div>
             <h5 className='mt-5'> Qes-3 :What other services does firebase provide other than authentication
             </h5> <h5 className='text-danger'>Ans :</h5>
-            <div className='mt-3 shadow rounded p-4'>
+            <div className='mt-3 shadow rounded p-4 mb-5'>
                 <p>Similarly, Firebase is used for many purposes that can help your apps to develop, grow and make it a quality app.Firebase, Backend-as-a-Service (BaaS), is a platform by Google that provides functionalities and helps with the backend development of your Android, iOS, or web and even some products that support Unity3D too.Firebase Database: used to store users data like chat messages, users details and other metadata
                     Firebase Cloud Storage: used to store user-generated content like the profile picture, multimedia messages, etc.
                     Firebase Cloud Messaging: used to send notification

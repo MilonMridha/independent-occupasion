@@ -34,7 +34,7 @@ const SignUp = () => {
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
         if (password !== confirmPassword) {
-            setError('Did not macth password');
+            setError('Did not match password');
             return;
         }
         if (password.length < 6) {

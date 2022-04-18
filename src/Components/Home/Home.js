@@ -19,10 +19,11 @@ const Home = () => {
             <div className='banner'>
                 <img className='rounded img-fluid' src={image} alt="" />
                 <h1 className='heading ms-5 w-50'> A Travel Guide</h1>
+               
             </div>
 
             <h3 className='mt-5'>Services</h3>
-            <div className='container mx-auto row row-cols-1 row-cols-md-3 g-4 mt-2 '>
+            <div className='container mx-auto row row-cols-1 row-cols-md-3 g-4 mt-2 mb-4 '>
                 {
                     guides.map(guide => <Guides
                         key={guide.id}

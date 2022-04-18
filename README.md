@@ -15,6 +15,10 @@ My projects name is "A travel Guide"
 - Aboutpage includes my goal attempt.
 - There has  answer of  three qestion in the blogs route.
 
-## Framworks :
+## Frameworks :
 - There are some framework use in this site such as---->
-- react bootstrap, react firebase hooks, npm firebase, react router, react toast etc.....
+- react bootstrap
+- react firebase hooks
+- npm firebase 
+- react router 
+- react toast etc.....

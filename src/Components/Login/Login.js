@@ -73,7 +73,7 @@ const Login = () => {
 
 
 
-                <p>{hookError?.message} </p>
+                <p className='text-danger'>{hookError?.message} </p>
                 <Button className='w-50 d-block rounded-pill mx-auto' variant="danger" type="submit">
                     Login
                 </Button>

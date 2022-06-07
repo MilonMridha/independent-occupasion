@@ -10,7 +10,7 @@ import facebook from '../../Social-icon/facebook .png';
 const SocialLogin = () => {
     const [signInWithGoogle,user] = useSignInWithGoogle(auth);
     const [signInWithGithub,githubUser] = useSignInWithGithub(auth);
-    const [signInWithFacebook,facebookUser] = useSignInWithGithub(auth);
+    const [signInWithFacebook,facebookUser] = useSignInWithFacebook(auth);
     
     const navigate = useNavigate();
     if(user || githubUser || facebookUser){
